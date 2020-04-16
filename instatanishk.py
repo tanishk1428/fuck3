@@ -104,7 +104,7 @@ class Instabrute():
 			print ('[$] Try to use proxy after fail.')
 			randomProxy() #Check that, may contain bugs
 
-			UsePorxy = N
+			UsePorxy = 'N'
 			if (UsePorxy == 'Y' or UsePorxy == 'YES'):
 				print ('[$] Try to use proxy after fail.')
 				randomProxy() #Check that, may contain bugs
