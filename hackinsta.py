@@ -36,7 +36,7 @@ class Instabrute():
 		self.IsUserExists()
 
 
-                UseProxy = Input ('[*] do you want to use proxy (y/n): ').upper()
+                UseProxy = Input('[*] do you want to use proxy (y/n): ').upper()
 		if (UseProxy == 'Y' or UseProxy =='YES'):
 		         self.randomProxy()
 				  
