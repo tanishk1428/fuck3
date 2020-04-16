@@ -36,10 +36,10 @@ class Instabrute():
 		self.IsUserExists()
 
 
-		
-		
-		
-
+                UseProxy = Input ('[*] do you want to use proxy (y/n):
+		if (UseProxy == 'Y' or UseProxy == 'YES'):
+		    self.randomProxy()
+				  
 
 	#Check if password file exists and check if he contain passwords
 	def loadPasswords(self):
