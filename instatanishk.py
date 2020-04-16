@@ -24,7 +24,7 @@ class Instabrute():
 		self.loadPasswords()
 		#Check if username exists
 		self.IsUserExists()
-		UsePorxy = N
+		UsePorxy = 'N'
 		if (UsePorxy == 'Y' or UsePorxy == 'YES'):
 			self.randomProxy()
 	#Check if password file exists and check if he contain passwords
